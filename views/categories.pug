@@ -1,0 +1,10 @@
+extends common/layout
+
+block layout-content
+  section#categories
+    h1 Categories
+    .category-list
+      each category in categories
+        .category
+          h3= category.name
+          p= category.description

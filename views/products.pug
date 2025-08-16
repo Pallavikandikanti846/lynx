@@ -1,0 +1,11 @@
+extends common/layout
+
+block layout-content
+  section#products
+    h1 Products
+    .product-list
+      each product in products
+        .product
+          img(src=product.image, alt=product.title, width="150")
+          h3= product.title
+          p Price: $#{product.price}
