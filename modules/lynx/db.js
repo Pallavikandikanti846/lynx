@@ -76,12 +76,16 @@ async function addProduct(productId,productTitle, productPrice, productImage) {
   await newProduct.save(); //save to the DB
 }
 
-async function updateProductPrice(title, newPrice) {
-  await Product.updateOne(
-    { title: String(title) },
-    { price: Number(newPrice) }
+async function updateProductDetails(productId, productTitle, productPrice, productImage) {
+  await Product.updateOne({ id: Number(productId) },
+    { 
+      title: String(productTitle), 
+      price: Number(productPrice), 
+      image: String(productImage) 
+    }
   );
 }
+
 async function deleteProductsById(id) {
   await Product.deleteMany({ id: id });
 }
@@ -119,12 +123,15 @@ async function addCategory(categoryId,categoryName, categoryDescription) {
   await newCategory.save(); //save to the DB
 }
 
-async function updateCategoryDescription(name, newDescription) {
-  await Category.updateOne(
-    { name: String(name) },
-    { description: String(newDescription) }
+async function updateCategoryDetails(categoryId, categoryName, categoryDescription) {
+  await Product.updateOne({ id: Number(categoryId) },
+    { 
+      name: String(categoryName), 
+      description: String(categoryDescription)
+    }
   );
 }
+
 async function deleteCategoriesById(id) {
   await Category.deleteMany({ id: id });
 }
@@ -134,11 +141,11 @@ export default {
   getProducts,
   initializeProducts,
   addProduct,
-  updateProductPrice,
+  updateProductDetails,
   deleteProductsById,
   getCategories,
   initializeCategories,
   addCategory,
-  updateCategoryDescription,
+  updateCategoryDetails,
   deleteCategoriesById
 }

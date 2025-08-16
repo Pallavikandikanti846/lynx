@@ -94,6 +94,19 @@
   text-align: center;
   font-family: "Ubuntu", sans-serif;
 }
+.crud-buttons{
+   padding-bottom: 1em;
+   text-align: right;
+}
+.crud-buttons a{
+ text-decoration: none;
+ margin-right: 1em;
+ color:black;
+ border:1px solid rgb(72, 135, 137);
+ background-color: rgb(72, 135, 137);
+ border-radius:0.4em; 
+ padding:0.4em;
+}
 .category-list {
   display: flex;
   flex-wrap: wrap;
@@ -121,11 +134,12 @@
 #products {
   padding: 1em 2em;
   margin-top: 1em;
+  display: block;
 }
 #products h2 {
   font-size: 2.5em;
   margin-bottom: 0.8em;
-  text-align: center;
+  /* text-align: center; */
   font-family: "Ubuntu", sans-serif;
 }
 .product-list {
