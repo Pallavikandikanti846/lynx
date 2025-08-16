@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express from "express";
 import path from "path";
-import cors from 'cors';
 import * as url from "url";
 import { fileURLToPath } from "url";
 import db from "./modules/lynx/db.js"; //load db.js
@@ -25,7 +24,6 @@ app.set("view cache", false);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 
 //USE PAGE ROUTES FROM ROUTER(S)
